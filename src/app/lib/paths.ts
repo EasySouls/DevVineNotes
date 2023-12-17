@@ -1,5 +1,5 @@
 enum Paths {
-  INDEX = '/*',
+  INDEX = '/',
   NOTES = '/notes',
   USERS = '/users',
   DASHBOARD = '/dashboard',

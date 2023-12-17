@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import NotesList from './features/notes/NotesList';
 import Dashboard from './features/dashboard/Dashboard';
-import Paths from './app/utils/paths';
+import Paths from './app/lib/paths';
 import ErrorPage from './components/ErrorPage';
 import Register from './features/register/Register';
 
