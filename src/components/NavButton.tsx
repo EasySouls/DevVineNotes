@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 type NavButtonProps = {
@@ -7,9 +8,9 @@ type NavButtonProps = {
 
 const NavButton = ({ destination, title }: NavButtonProps) => {
   return (
-    <button className="bg-blue-600 px-3 py-2">
+    <Button variant="contained">
       <Link to={destination}>{title}</Link>
-    </button>
+    </Button>
   );
 };
 
