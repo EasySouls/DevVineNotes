@@ -1,28 +1,34 @@
-import { Routes, Route } from "react-router-dom";
-import LoggedInLayout from "./components/LoggedInLayout";
-import Home from "./components/Home";
-import Login from "./components/Login";
-import NotesList from "./notes/NotesList";
-import Dashboard from "./dashboard/Dashboard";
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import Login from './components/Login';
+import NotesList from './features/notes/NotesList';
+import Dashboard from './features/dashboard/Dashboard';
+import Paths from './app/lib/paths';
+import ErrorPage from './components/ErrorPage';
+import Register from './features/register/Register';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<LoggedInLayout />}>
+      <Route path={Paths.INDEX} element={<Layout />}>
         {/* Landing page for the application */}
         <Route index element={<Home />} />
 
         {/* Auth */}
-        <Route path='login' element={<Login />} />
-        {/*<Route path='register' element={<Register />} />*/}
+        <Route path={Paths.LOGIN} element={<Login />} />
+        <Route path={Paths.REGISTER} element={<Register />} />
 
         {/* Notes */}
-        <Route path='notes'>
+        <Route path={Paths.NOTES}>
           <Route index element={<NotesList />} />
         </Route>
 
         {/* Dashboard */}
-        <Route path='dashboard' element={<Dashboard />} />
+        <Route path={Paths.DASHBOARD} element={<Dashboard />} />
+
+        {/* Fallback page for the not defined routes */}
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
   );
