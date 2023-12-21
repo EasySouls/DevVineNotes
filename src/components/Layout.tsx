@@ -1,14 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <div className='bg-blue-400'>
+      <main className="bg-blue-700">
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </>
   );
